@@ -1,0 +1,3 @@
+dictionary:
+    resource: "@TiddoVlekDictionaryAdminBundle/Resources/config/routing.yml"
+    prefix:   /
