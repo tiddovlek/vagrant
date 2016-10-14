@@ -21,7 +21,7 @@ vagrantfile:
                 machines:
                     vflm_6g8eagaoayxf:
                         id: dictionary-admin
-                        hostname: dictionary-admin.33.33.33.12.xip.io
+                          hostname: dictionary-admin.33.33.33.12.xip.io
                         network:
                             private_network: 33.33.33.12
                             forwarded_port:
@@ -124,9 +124,9 @@ nginx:
             www_root: /var/www/awesome
             listen_port: '80'
             index_files:
-                - Portfolio/index.html
-                - Portfolio/index.htm
-                - Portfolio/index.php
+                - index.html
+                - index.htm
+                - index.php
             client_max_body_size: 1m
             ssl: '0'
             ssl_cert: ''
