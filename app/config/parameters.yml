@@ -1,4 +1,0 @@
-imports:
-    - { resource: parameters.defaults.yml }
-    - { resource: parameters.php }
-    - { resource: parameters.local.yml, ignore_errors: true }
