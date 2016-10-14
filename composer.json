@@ -1,0 +1,86 @@
+{
+    "name": "eyeopen/dictionary",
+    "description": "Dictionary Admin Application",
+    "autoload": {
+        "psr-0": {
+            "": "src/",
+            "PHPUnit": "/usr/share/php"
+        }
+    },
+
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://satis.eyeopen.nl/"
+        },
+        {
+            "type": "composer",
+            "url": "https://packages.zendframework.com/"
+        },
+
+        {
+            "type": "vcs",
+            "url": "https://github.com/cdaguerre/BCCResqueBundle"
+        }
+    ],
+    "require": {
+        "php-64bit": "~5.6",
+        "ext-apcu": "*",
+        "ext-bcmath": "*",
+        "ext-exif": "*",
+        "ext-curl": "*",
+        "ext-gd": "*",
+        "ext-gettext": "*",
+        "ext-imagick": "*",
+        "ext-intl": "*",
+        "ext-mbstring": "*",
+        "ext-mcrypt": "*",
+        "ext-mysqlnd": "*",
+        "ext-pdo": "*",
+        "ext-pdo_mysql": "*",
+        "ext-pdo_sqlite": "*",
+        "ext-soap": "*",
+        "ext-sockets": "*",
+        "ext-sqlite3": "*",
+        "ext-xsl": "*",
+        "ext-zip": "*",
+        "ext-zlib": "*",
+
+        "symfony/symfony": "~2.7,<2.8",
+        "sensio/distribution-bundle": "~2.3",
+        "sensio/framework-extra-bundle": "~3.0",
+        "sensio/generator-bundle": "~2.3",
+        "doctrine/orm": "~2.2,>=2.2.3",
+        "doctrine/doctrine-bundle": "~1.2",
+        "twig/extensions": "~1.0",
+        "incenteev/composer-parameter-handler": "~2.0",
+        "eyeopen/dictionary-bundle": "*",
+        "eyeopen/dictionary-view-bundle": "*",
+        "symfony/assetic-bundle": "~2.1"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "php app/console assetic:dump --env=prod",
+            "php app/console assetic:dump --env=dev"
+        ],
+        "post-update-cmd": [
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "php app/console assetic:dump --env=prod",
+            "php app/console assetic:dump --env=dev"
+        ],
+        "warmup": [
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache"
+        ]
+    },
+    "extra": {
+        "symfony-app-dir": "app",
+        "symfony-web-dir": "web"
+    }
+}

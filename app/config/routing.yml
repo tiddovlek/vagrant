@@ -1,0 +1,3 @@
+dictionary:
+    resource: "@EyeOpenDictionaryAdminBundle/Resources/config/routing.yml"
+    prefix:   /
